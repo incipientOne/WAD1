@@ -11,35 +11,41 @@ def populate():
 
 	add_page(cat=python_cat,
 		title="Official Python Tutorial",
-		url="http://docs.python.org/2/tutorial/")
+		url="http://docs.python.org/2/tutorial/",
+		views=72)
 
 	add_page(cat=python_cat,
 		title="How to Think like a Computer Scientist",
-		url="http://www.greenteapress.com/thinkpython")
+		url="http://www.greenteapress.com/thinkpython",
+		views= 5)
 
 	add_page(cat=python_cat,
 		title="Learn Python in 10 Minutes",
-		url="http://www.korokithakis.net/tutorials/python/")
+		url="http://www.korokithakis.net/tutorials/python/",
+		views=1000)
 
 	django_cat = add_cat("Django", 64, 32)
 
 	add_page(cat=django_cat,
 		title="Official Django Tutorial",
-		url="http://docs.djangoproject.com/en/1.5/intro/tutorial101/")
+		url="http://docs.djangoproject.com/en/1.5/intro/tutorial101/",
+		views=11)
 
 	add_page(cat=django_cat,
 		title="Django Rocks",
 		url="http://www.djangorocks.com/")
 
 	add_page(cat=django_cat,
-		title="hot to Tango with Django",
-		url="http://www.tangowithdjango.com")
+		title="how to Tango with Django",
+		url="http://www.tangowithdjango.com",
+		views=90)
 
 	frame_cat = add_cat("Other Frameworks", 32, 16)
 
 	add_page(cat=frame_cat,
 		title="Bottle",
-		url="http://bottlepy.org/docs/dev/")
+		url="http://bottlepy.org/docs/dev/",
+		views = 56)
 
 	add_page(cat=frame_cat,
 		title="Flask",
