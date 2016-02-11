@@ -28,7 +28,7 @@ def populate():
 
 	add_page(cat=django_cat,
 		title="Official Django Tutorial",
-		url="http://docs.djangoproject.com/en/1.5/intro/tutorial101/",
+		url="https://docs.djangoproject.com/en/1.5/intro/tutorial101/",
 		views=11)
 
 	add_page(cat=django_cat,

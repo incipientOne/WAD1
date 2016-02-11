@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.models import User
 
 def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
@@ -128,7 +128,10 @@ def user_login(request):
                 return HttpResponse("Your Rango account is disabled.")
         else:
             print "Invalid login details: {0}, {1}".format(username, password)
-            return HttpResponse("Invalid login details supplied.")
+            if User.objects.filter(username=username).exists():
+                 return HttpResponse("Incorrect password")
+            else:
+                 return HttpResponse("Incorrect username")
 
     else:
         return render(request, 'rango/login.html', {})
