@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
+
 def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
@@ -129,19 +130,21 @@ def user_login(request):
         else:
             print "Invalid login details: {0}, {1}".format(username, password)
             if User.objects.filter(username=username).exists():
-                 return HttpResponse("Incorrect password")
+                return HttpResponse("Incorrect password")
             else:
-                 return HttpResponse("Incorrect username")
+                return HttpResponse("Incorrect username")
 
     else:
         return render(request, 'rango/login.html', {})
 
+
 @login_required
 def restricted(request):
-	return render(request, 'rango/restricted.html')
+    return render(request, 'rango/restricted.html')
+
 
 @login_required
 def user_logout(request):
-	logout(request)
+    logout(request)
 
-	return HttpResponseRedirect('/rango/')
+    return HttpResponseRedirect('/rango/')
